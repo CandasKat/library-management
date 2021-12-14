@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionnairebibliotheque.Tableau">
+  <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="704.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="tableLivres" editable="true" layoutX="328.0" layoutY="96.0" prefHeight="605.0" prefWidth="471.0" style="-fx-background-color: #829384;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="96.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="95.0" text="Id" />
+                <TableColumn fx:id="col_nom_livre" prefWidth="95.0" text="Nom de livre" />
+                  <TableColumn fx:id="col_author" prefWidth="95.0" text="Author" />
+                  <TableColumn fx:id="col_genre" prefWidth="95.0" text="Genre" />
+                  <TableColumn fx:id="col_editeur" prefWidth="95.0" text="Editeur" />
+              </columns>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+            </TableView>
+            <SplitPane layoutY="1.0" prefHeight="700.0" prefWidth="328.0">
+               <items>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #294d5d;">
+                     <children>
+                        <Button layoutX="14.0" layoutY="607.0" mnemonicParsing="false" onAction="#ajouterAction" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #81d581;" text="Ajouter" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="224.0" AnchorPane.topAnchor="607.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="224.0" layoutY="607.0" mnemonicParsing="false" onAction="#supprimerAction" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #ee2d00;" text="Supprimer" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="607.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="119.0" layoutY="607.0" mnemonicParsing="false" onAction="#modifierAction" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: yellow;" text="Modifier" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="607.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="nomField" layoutX="11.0" layoutY="402.0" prefHeight="25.0" prefWidth="305.0" promptText="Nom de Livre" AnchorPane.bottomAnchor="271.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="402.0" />
+                        <TextField fx:id="authorField" layoutX="11.0" layoutY="447.0" prefHeight="25.0" prefWidth="305.0" promptText="Author" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="447.0" />
+                        <TextField fx:id="genreField" layoutX="11.0" layoutY="492.0" prefHeight="25.0" prefWidth="305.0" promptText="Genre" AnchorPane.bottomAnchor="181.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="492.0" />
+                        <TextField fx:id="editeurField" layoutX="11.0" layoutY="538.0" prefHeight="25.0" prefWidth="305.0" promptText="Editeur" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="538.0" />
+                        <ImageView fitHeight="264.0" fitWidth="288.0" layoutX="19.0" layoutY="26.0" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="26.0">
+                           <image>
+                              <Image url="@../images/library.png" />
+                           </image>
+                           <rotationAxis>
+                              <Point3D />
+                           </rotationAxis>
+                        </ImageView>
+                        <Separator layoutX="11.0" layoutY="369.0" prefHeight="0.0" prefWidth="305.0" AnchorPane.bottomAnchor="326.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="369.0" />
+                        <Label fx:id="messageChamp" layoutX="22.0" layoutY="332.0" prefHeight="17.0" prefWidth="288.0" textFill="#b0f209" AnchorPane.bottomAnchor="349.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="332.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+            <TextField fx:id="chercheField" layoutX="359.0" layoutY="39.0" prefHeight="27.0" prefWidth="398.0" promptText="Chercher" AnchorPane.bottomAnchor="634.0" AnchorPane.leftAnchor="359.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="39.0" />
+         </children></AnchorPane>
+  </children>
+</VBox>
